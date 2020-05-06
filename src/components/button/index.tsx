@@ -1,9 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-interface Props {}
+const Button: React.FC = () => <div role="heading">My First Component</div>;
 
-const Button: React.FC<Props> = () => (
-  <div role='heading'>My First Component</div>
-)
-
-export default Button
+export default Button;
