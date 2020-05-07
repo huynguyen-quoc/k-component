@@ -2,6 +2,7 @@ const path = require('path')
 const SRC_PATH = path.join(__dirname, '../src')
 const tsImportPluginFactory = require('ts-import-plugin')
 
+
 const transformerPlugin = tsImportPluginFactory({
   libraryName: 'antd',
   libraryDirectory: 'lib',
@@ -37,6 +38,12 @@ module.exports = ({ config }) => {
             before: [ transformerPlugin ]
           }),
         },
+      },
+      {
+         loader: require.resolve('react-docgen-typescript-loader'),
+            options: {
+              tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
+            },
       }
     ],
     exclude: /node_modules/
