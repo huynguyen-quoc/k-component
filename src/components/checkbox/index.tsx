@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { Checkbox as AntCheckbox } from 'antd'
-import { CheckboxProps as AntCheckboxProps } from 'antd/es/checkbox'
+import { CheckboxProps } from 'antd/es/checkbox'
 
-export const View: React.FC<AntCheckboxProps> = (props) => <AntCheckbox {...props} />
+type Ref = AntCheckbox
 
-export default View
+export const MocaCheckbox = forwardRef<Ref, CheckboxProps>((props, ref) => <AntCheckbox {...props} ref={ref} />)
+
+MocaCheckbox.displayName = 'MocaCheckbox'
+
+export default MocaCheckbox

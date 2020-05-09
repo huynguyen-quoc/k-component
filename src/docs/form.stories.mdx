@@ -1,0 +1,24 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { Form, Input } from '../index';
+
+<Meta title='Form' component={Form} />
+
+# Form
+Button component which is wrapper of ant checkbox with full properties from ant design
+<Preview>
+  <Story name="default">
+      <Form>
+        <Form.Item label="Input Item">
+          <Input />
+        </Form.Item>
+      </Form>
+  </Story>
+</Preview>
+
+## Props Form
+
+<Props of={Form} />
+
+## Props Form Item
+
+<Props of={Form.Item} />

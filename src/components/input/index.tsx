@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { Input as AntInput } from 'antd'
 import { InputProps } from 'antd/es/input'
 
-export const Input: React.FC<InputProps> = (props: InputProps) => <AntInput {...props} />
+type Ref = AntInput
 
-export default Input
+export const MocaInput = forwardRef<Ref, InputProps>((props, ref) => <AntInput {...props} ref={ref} />)
+
+MocaInput.displayName = 'MocaInput'
+
+export default MocaInput

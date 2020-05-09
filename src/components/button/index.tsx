@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { Button as AntButton } from 'antd'
 import { ButtonProps } from 'antd/es/button'
 
-export const Button: React.FC<ButtonProps> = (props) => <AntButton {...props} />
+type Ref = HTMLElement & ButtonProps
 
-export default Button
+export const MocaButton = forwardRef<Ref, ButtonProps>((props, ref) => <AntButton ref={ref} {...props} />)
+
+MocaButton.displayName = 'MocaButton'
+
+export default MocaButton

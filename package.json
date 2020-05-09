@@ -1,10 +1,11 @@
 {
-  "name": "k-component",
+  "name": "ant-moca-component",
   "version": "1.0.0",
   "description": "K custom ant component",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "jsnext:main": "build/index.es.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "build": "rollup -c",
     "storybook": "start-storybook --docs -p 6006",
@@ -13,13 +14,17 @@
   },
   "author": "Huy Nguyen",
   "license": "ISC",
+  "keywords": [
+    "ant design",
+    "custom"
+  ],
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@rollup/plugin-babel": "^5.0.0",
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-node-resolve": "^7.1.3",
     "@storybook/addon-docs": "^5.3.18",
-    "@storybook/react": "^5.3.18",
+    "@storybook/react": "^6.0.0-beta.4",
     "@testing-library/jest-dom": "^5.5.0",
     "@testing-library/react": "^10.0.4",
     "@types/jest": "^25.2.1",
@@ -79,5 +84,9 @@
     "*.{js,ts,tsx}": [
       "eslint --fix"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huynguyen-quoc/k-component.git"
   }
 }
