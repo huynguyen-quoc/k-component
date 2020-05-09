@@ -5,7 +5,7 @@ addons.setConfig({
    * show story component as full screen
    * @type {Boolean}
    */
-  isFullscreen: true,
+  isFullscreen: false,
 
   /**
    * display panel that shows a list of stories
@@ -41,7 +41,7 @@ addons.setConfig({
    * show/hide tool bar
    * @type {Boolean}
    */
-  isToolshown: false,
+  isToolshown: true,
 
   /**
    * theme storybook, see link below

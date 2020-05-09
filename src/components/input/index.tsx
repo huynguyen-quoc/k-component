@@ -8,4 +8,13 @@ export const MocaInput = forwardRef<Ref, InputProps>((props, ref) => <AntInput {
 
 MocaInput.displayName = 'MocaInput'
 
-export default MocaInput
+type MocaInput = typeof MocaInput
+interface Input extends MocaInput {
+  TextArea: typeof AntInput.TextArea
+}
+const Input: Input = MocaInput as Input
+
+export const TextArea = AntInput.TextArea
+Input.TextArea = TextArea
+export { InputProps }
+export default Input

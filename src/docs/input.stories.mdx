@@ -1,15 +1,31 @@
-import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
-import { Input } from '../index';
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+import { Input } from '../index'
+import * as stories from './input.stories'
 
-<Meta title='Input' component={Input} />
+<Meta title="Input" component={Input} />
 
 # Input
-Input component which is wrapper of ant checkbox with full properties from ant design
+
+Default Input
+
 <Preview>
-  <Story name="default">
-      <Input/>
+  <Story name="default" parameters={{ docs: { source: { code: '<Input />' } } }}>
+    {stories.defaultView()}
   </Story>
 </Preview>
 
-## Props
+TextArea
+
+<Preview>
+  <Story name="textarea" parameters={{ docs: { source: { code: '<Input.TextArea rows={10} />' } } }}>
+    {stories.textArea()}
+  </Story>
+</Preview>
+
+## Properties
+
 <Props of={Input} />
+
+## Properties TextArea
+
+<Props of={Input.TextArea} />
