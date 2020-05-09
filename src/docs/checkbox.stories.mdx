@@ -1,23 +1,44 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import { Checkbox } from '../index';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { Checkbox } from '../index'
+import * as stories from './checkbox.stories'
 
 <Meta title="Checkbox" component={Checkbox} />
 
 # Checkbox
-Checkbox component which is wrapper of ant checkbox with full properties from ant design
+
+Default Checkbox
+
 <Preview>
-  <Story name="default">
-      <Checkbox />
-  </Story>
-  <Story name="checked">
-      <Checkbox checked />
-  </Story>
-  <Story name="disabled">
-      <Checkbox disabled />
+  <Story name="default" parameters={{ docs: { source: { code: '<Checkbox />' } } }}>
+    {stories.defaultCheckBox()}
   </Story>
 </Preview>
 
-# Props
+Checked Checkbox
+
+<Preview>
+  <Story name="checked" parameters={{ docs: { source: { code: '<Checkbox checked />' } } }}>
+    {stories.checked()}
+  </Story>
+</Preview>
+
+Group Checkbox
+
+<Preview>
+  <Story name="group" parameters={{ docs: { source: { code: `const options = [
+  { label: 'check box 1', value: 1 },
+  { label: 'check box 2', value: 2 },
+  { label: 'check box 3', value: 3 },
+]
+<Checkbox.Group options={options} />` } } }}>
+    {stories.group()}
+  </Story>
+</Preview>
+
+# Properties
 
 <Props of={Checkbox} />
 
+# Properties Group
+
+<Props of={Checkbox.Group} />

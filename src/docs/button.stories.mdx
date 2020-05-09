@@ -1,25 +1,37 @@
-import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
-import { Button } from '../index';
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks'
+import { Button } from '../index'
 
-<Meta title='Button' component={Button} />
+<Meta title="Button" component={Button} />
 
 # Button
-Button component which is wrapper of ant checkbox with full properties from ant design
+
+Default Button
 <Preview>
   <Story name="default">
-      <Button>Default</Button>
-  </Story>
-  <Story name="primary">
-      <Button type="primary">Primary</Button>
-  </Story>
-  <Story name="dashed">
-      <Button type="dashed">Dashed</Button>
-  </Story>
-  <Story name="link">
-      <Button type="link">Link</Button>
+    <Button>Default</Button>
   </Story>
 </Preview>
 
-## Props
+Primary Button
+<Preview>
+  <Story name="primary">
+    <Button type="primary">Primary</Button>
+  </Story>
+</Preview>
 
+Dash Button
+<Preview>
+  <Story name="dashed">
+    <Button type="dashed">Dashed</Button>
+  </Story>
+</Preview>
+
+Link Button
+<Preview>
+  <Story name="link">
+    <Button type="link">Link</Button>
+  </Story>
+</Preview>
+
+## Properties
 <Props of={Button} />
