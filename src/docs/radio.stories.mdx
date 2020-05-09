@@ -1,23 +1,53 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import { Radio } from '../index';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { Radio } from '../index'
+import * as stories from './radio.stories'
 
 <Meta title="Radio" component={Radio} />
 
 # Radio
-Radio component which is wrapper of ant checkbox with full properties from ant design
+
+Default Radio
+
 <Preview>
-  <Story name="default">
-      <Radio />
-  </Story>
-  <Story name="checked">
-      <Radio checked />
-  </Story>
-  <Story name="disabled">
-      <Radio disabled />
+  <Story name="default" parameters={{ docs: { source: { code: '<Radio />' } } }}>
+    {stories.defaultView()}
   </Story>
 </Preview>
 
-# Props
+Checked Radio
+
+<Preview>
+  <Story name="checked" parameters={{ docs: { source: { code: `<Radio checked />` } } }}>
+    {stories.checked()}
+  </Story>
+</Preview>
+
+Group Radio
+
+<Preview>
+  <Story
+    name="group"
+    parameters={{
+      docs: {
+        source: {
+          code: `const options = [
+                { label: 'radio 1', value: 1 },
+                { label: 'radio 2', value: 2 },
+                { label: 'radio 3', value: 3 },
+              ]
+          <Radio.Group options={options} />`,
+        },
+      },
+    }}
+  >
+    {stories.group()}
+  </Story>
+</Preview>
+
+# Properties
 
 <Props of={Radio} />
 
+# Properties Group
+
+<Props of={Radio.Group} />

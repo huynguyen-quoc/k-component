@@ -25,12 +25,21 @@ Checked Checkbox
 Group Checkbox
 
 <Preview>
-  <Story name="group" parameters={{ docs: { source: { code: `const options = [
-  { label: 'check box 1', value: 1 },
-  { label: 'check box 2', value: 2 },
-  { label: 'check box 3', value: 3 },
-]
-<Checkbox.Group options={options} />` } } }}>
+  <Story
+    name="group"
+    parameters={{
+      docs: {
+        source: {
+          code: `const options = [
+                  { label: 'check box 1', value: 1 },
+                  { label: 'check box 2', value: 2 },
+                  { label: 'check box 3', value: 3 },
+                ]
+           <Checkbox.Group options={options} />`,
+        },
+      },
+    }}
+  >
     {stories.group()}
   </Story>
 </Preview>

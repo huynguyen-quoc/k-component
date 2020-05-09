@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import { Radio as AntRadio } from 'antd'
-import { RadioProps } from 'antd/es/radio'
+import { RadioProps, RadioGroupProps, RadioChangeEvent } from 'antd/es/radio'
 
 type Ref = HTMLElement & AntRadio
 
@@ -8,4 +8,15 @@ export const MocaRadio = forwardRef<Ref, RadioProps>((props, ref) => <AntRadio r
 
 MocaRadio.displayName = 'MocaRadio'
 
-export default MocaRadio
+export { RadioProps, RadioGroupProps, RadioChangeEvent }
+
+type MocaRadio = typeof MocaRadio
+interface Radio extends MocaRadio {
+  Group: typeof AntRadio.Group
+}
+const Radio: Radio = MocaRadio as Radio
+
+export const RadioGroup = AntRadio.Group
+Radio.Group = RadioGroup
+
+export default Radio
