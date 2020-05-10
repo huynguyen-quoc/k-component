@@ -15,6 +15,7 @@ interface Input extends MocaInput {
 const Input: Input = MocaInput as Input
 
 export const TextArea = AntInput.TextArea
+
 Input.TextArea = TextArea
 export { InputProps }
 export default Input

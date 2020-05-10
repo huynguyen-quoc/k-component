@@ -2,9 +2,11 @@ import React, { forwardRef } from 'react'
 import { Checkbox as AntCheckbox } from 'antd'
 import { CheckboxProps, CheckboxGroupProps, CheckboxOptionType, CheckboxChangeEvent } from 'antd/es/checkbox'
 
-type Ref = AntCheckbox
+type MocalCheckbox = AntCheckbox & HTMLElement
 
-export const MocaCheckbox = forwardRef<Ref, CheckboxProps>((props, ref) => <AntCheckbox {...props} ref={ref} />)
+export const MocaCheckbox = forwardRef<MocalCheckbox, CheckboxProps>((props, ref) => (
+  <AntCheckbox {...props} ref={ref} />
+))
 
 MocaCheckbox.displayName = 'MocaCheckbox'
 
