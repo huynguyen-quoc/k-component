@@ -26,6 +26,21 @@ module.exports = ({ config }) => {
     ],
   })
   config.module.rules.push({
+    test: /\.scss$/,
+    use: [
+      'style-loader',
+      'css-loader',
+      {
+        loader: require.resolve('sass-loader'),
+        options: {
+          sassOptions: {
+            javascriptEnabled: true
+          }
+        },
+      }
+    ],
+  })
+  config.module.rules.push({
     test: /\.(ts|tsx)$/,
     include: [SRC_PATH],
     use: [

@@ -2,9 +2,9 @@ import React, { forwardRef } from 'react'
 import { Radio as AntRadio } from 'antd'
 import { RadioProps, RadioGroupProps, RadioChangeEvent } from 'antd/es/radio'
 
-type Ref = HTMLElement & AntRadio
+export type MocaRadioRef = AntRadio
 
-export const MocaRadio = forwardRef<Ref, RadioProps>((props, ref) => <AntRadio ref={ref} {...props} />)
+export const MocaRadio = forwardRef<MocaRadioRef, RadioProps>((props, ref) => <AntRadio ref={ref} {...props} />)
 
 MocaRadio.displayName = 'MocaRadio'
 

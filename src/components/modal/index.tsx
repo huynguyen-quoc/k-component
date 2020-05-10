@@ -1,13 +1,13 @@
-import React, { forwardRef, ReactNode } from 'react'
+import React, { FC, PropsWithChildren } from 'react'
 import { Modal as AntModal } from 'antd'
-import { ModalFuncProps } from 'antd/es/modal'
+import { ModalFuncProps, ModalProps } from 'antd/es/modal'
 
-export type MocaModalProps = ModalFuncProps & { children?: ReactNode }
+export type MocaModalProps = PropsWithChildren<ModalFuncProps>
 
-export type MocaModal = MocaModalProps & any
-
-export const MocaModal = forwardRef<MocaModal, MocaModalProps>((props, ref) => <AntModal ref={ref} {...props} />)
+export const MocaModal: FC<MocaModalProps> = (props) => <AntModal {...props} />
 
 MocaModal.displayName = 'MocaModal'
+
+export { ModalProps, ModalFuncProps }
 
 export default MocaModal

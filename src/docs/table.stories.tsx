@@ -19,6 +19,10 @@ const data: Data[] = [
     key: 0,
     name: 'Jack',
   },
+  {
+    key: 1,
+    name: 'Ken',
+  },
 ]
 
 class BasicTable extends PureComponent<{}, ModalState> {

@@ -1,0 +1,7 @@
+.ant-table-row {
+    &.odd {
+        td {
+            background: lighten($color: #000000, $amount: 95%)
+        }
+    }
+}
