@@ -1,0 +1,21 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { Table } from '../index'
+import * as stories from './table.stories'
+
+<Meta title="Table" component={Table} />
+
+# Table
+
+Default Table
+<Preview>
+  <Story name="default" parameters={{ docs: { source: { code: '<Radio />' } } }}>
+    {stories.defaultView()}
+  </Story>
+</Preview>
+
+# Properties
+
+<Props of={Table} />
+
+## Properties Column
+<Props of={Table.Column} />
