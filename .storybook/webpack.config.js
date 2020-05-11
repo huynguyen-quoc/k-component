@@ -2,12 +2,11 @@ const path = require('path')
 const SRC_PATH = path.join(__dirname, '../src')
 const tsImportPluginFactory = require('ts-import-plugin')
 
-
 const transformerPlugin = tsImportPluginFactory({
   libraryName: 'antd',
   libraryDirectory: 'lib',
-  style: true
-});
+  style: true,
+})
 
 module.exports = ({ config }) => {
   config.module.rules.push({
@@ -19,10 +18,10 @@ module.exports = ({ config }) => {
         loader: require.resolve('less-loader'),
         options: {
           lessOptions: {
-            javascriptEnabled: true
-          }
+            javascriptEnabled: true,
+          },
         },
-      }
+      },
     ],
   })
   config.module.rules.push({
@@ -34,10 +33,10 @@ module.exports = ({ config }) => {
         loader: require.resolve('sass-loader'),
         options: {
           sassOptions: {
-            javascriptEnabled: true
-          }
+            javascriptEnabled: true,
+          },
         },
-      }
+      },
     ],
   })
   config.module.rules.push({
@@ -50,7 +49,7 @@ module.exports = ({ config }) => {
         options: {
           configFileName: './tsconfig.json',
           getCustomTransformers: () => ({
-            before: [ transformerPlugin ]
+            before: [transformerPlugin],
           }),
         },
       },
@@ -58,18 +57,23 @@ module.exports = ({ config }) => {
         loader: require.resolve('react-docgen-typescript-loader'),
         options: {
           tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
-          propFilter: prop => {
-            const parentName = prop.parent && prop.parent.name || ''
-            if (prop.name === 'key' && parentName === 'RefAttributes' || parentName.endsWith('HTMLAttributes') || parentName === 'DOMAttributes' || parentName === 'AriaAttributes') {
-              return false;
+          propFilter: (prop) => {
+            const parentName = (prop.parent && prop.parent.name) || ''
+            if (
+              (prop.name === 'key' && parentName === 'RefAttributes') ||
+              parentName.endsWith('HTMLAttributes') ||
+              parentName === 'DOMAttributes' ||
+              parentName === 'AriaAttributes'
+            ) {
+              return false
             }
 
-            return true;
-          }
-         },
-      }
+            return true
+          },
+        },
+      },
     ],
-    exclude: /node_modules/
+    exclude: /node_modules/,
   })
   config.resolve.extensions.push('.ts', '.tsx')
   return config

@@ -1,23 +1,15 @@
-import React, { forwardRef } from 'react'
-import { Checkbox as AntCheckbox } from 'antd'
-import { CheckboxProps, CheckboxGroupProps, CheckboxOptionType, CheckboxChangeEvent } from 'antd/es/checkbox'
+import Checkbox from './checkbox'
+import Group from './group'
 
-export type MocaCheckboxRef = AntCheckbox
+export { MocaCheckboxProps, MocaCheckboxChangeEvent } from './checkbox'
+export { MocaCheckboxGroupProps, MocaCheckboxOptionType } from './group'
 
-export const MocaCheckbox = forwardRef<MocaCheckboxRef, CheckboxProps>((props, ref) => (
-  <AntCheckbox {...props} ref={ref} />
-))
-
-MocaCheckbox.displayName = 'MocaCheckbox'
-
-export { CheckboxProps, CheckboxGroupProps, CheckboxOptionType, CheckboxChangeEvent }
-
-type MocaCheckbox = typeof MocaCheckbox
-interface Checkbox extends MocaCheckbox {
-  Group: typeof AntCheckbox.Group
+type MocaCheckbox = typeof Checkbox
+interface CheckboxType extends MocaCheckbox {
+  Group: typeof Group
 }
-const Checkbox: Checkbox = MocaCheckbox as Checkbox
+const MocaCheckbox: CheckboxType = Checkbox as CheckboxType
 
-export const CheckboxGroup = AntCheckbox.Group
-Checkbox.Group = CheckboxGroup
-export default Checkbox
+export const CheckboxGroup = Group
+MocaCheckbox.Group = Group
+export default MocaCheckbox

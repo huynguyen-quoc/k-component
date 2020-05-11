@@ -1,13 +1,5 @@
-import React, { forwardRef } from 'react'
-import { Button as AntButton } from 'antd'
-import { ButtonProps } from 'antd/es/button'
+import Button from './button'
+import { MocaButtonProps } from './button'
 
-export type MocaButtonRef = typeof AntButton & HTMLElement
-
-export type MocaButtonProps = ButtonProps
-
-export const MocaButton = forwardRef<MocaButtonRef, MocaButtonProps>((props, ref) => <AntButton ref={ref} {...props} />)
-
-MocaButton.displayName = 'MocaButton'
-
-export default MocaButton
+export { MocaButtonProps }
+export default Button
