@@ -1,25 +1,25 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import Button from './button'
+import MocaButton from './button'
 
 export default {
-  component: Button,
-  title: 'Button',
+  component: MocaButton,
+  title: 'MocaButton',
 }
 
-export const basic = (): JSX.Element => <Button onClick={action('clicked')}>Basic</Button>
+export const basic = (): JSX.Element => <MocaButton onClick={action('clicked')}>Basic</MocaButton>
 export const dashed = (): JSX.Element => (
-  <Button type="dashed" onClick={action('clicked')}>
+  <MocaButton type="dashed" onClick={action('clicked')}>
     Dashed
-  </Button>
+  </MocaButton>
 )
 export const link = (): JSX.Element => (
-  <Button type="link" onClick={action('clicked')}>
+  <MocaButton type="link" onClick={action('clicked')}>
     Link
-  </Button>
+  </MocaButton>
 )
 export const primary = (): JSX.Element => (
-  <Button type="primary" onClick={action('clicked')}>
+  <MocaButton type="primary" onClick={action('clicked')}>
     Primary
-  </Button>
+  </MocaButton>
 )

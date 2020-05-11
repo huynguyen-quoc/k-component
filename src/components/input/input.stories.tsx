@@ -1,23 +1,23 @@
 import React from 'react'
-import Input from './input'
+import MocaInput from './input'
 import TextArea from './textarea'
 
 export default {
-  title: 'Input',
-  component: Input,
+  title: 'MocaInput',
+  component: MocaInput,
   subcomponents: { MocaTextArea: TextArea },
 }
 
-export const basic = (): JSX.Element => <Input placeholder="Basic" />
+export const basic = (): JSX.Element => <MocaInput placeholder="Basic" />
 export const threeSizeInput = (): JSX.Element => (
   <>
-    <Input placeholder="Default Input" />
+    <MocaInput placeholder="Default MocaInput" />
     <br />
     <br />
-    <Input placeholder="Large Input" size="large" />
+    <MocaInput placeholder="Large MocaInput" size="large" />
     <br />
     <br />
-    <Input placeholder="Small Input" size="small" />
+    <MocaInput placeholder="Small MocaInput" size="small" />
   </>
 )
 export const textarea = (): JSX.Element => <TextArea placeholder="Text area" />

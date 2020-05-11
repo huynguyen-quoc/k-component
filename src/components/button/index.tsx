@@ -1,5 +1,5 @@
-import Button from './button'
+import MocaButton from './button'
 import { MocaButtonProps } from './button'
 
 export { MocaButtonProps }
-export default Button
+export default MocaButton
