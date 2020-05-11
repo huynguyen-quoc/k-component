@@ -74,7 +74,21 @@
     "preset": "ts-jest",
     "testEnvironment": "jsdom",
     "testPathIgnorePatterns": [
-      "build/"
+      "build",
+      "node_modules"
+    ],
+    "collectCoverageFrom": [
+      "src/**/{!(index),}.{ts,tsx}",
+      "!src/**/*.stories.{ts,tsx}"
+    ],
+    "verbose": true,
+    "collectCoverage": true,
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "tsx",
+      "json",
+      "node"
     ]
   },
   "peerDependencies": {

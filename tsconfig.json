@@ -20,5 +20,5 @@
     "esModuleInterop": true
   },
   "include": ["src"],
-  "exclude": ["node_modules", "build", "**/__tests__", "**/stories"]
+  "exclude": ["node_modules", "build", "**/*.spec.tsx", "**/*.stories.tsx"]
 }
