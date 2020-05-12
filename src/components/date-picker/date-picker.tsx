@@ -7,7 +7,18 @@ export type MocaFormatTypeName = 'date' | 'dateTime'
 export type MocaDateFormatType = {
   [K in MocaFormatTypeName]: string
 }
-export type MocaDatePickerProps = Omit<DatePickerProps, 'format' | 'value' | 'defaultValue' | 'picker'> & {
+export type MocaDatePickerProps = Omit<
+  DatePickerProps,
+  | 'format'
+  | 'onOk'
+  | 'onPanelChange'
+  | 'value'
+  | 'defaultValue'
+  | 'picker'
+  | 'popupStyle'
+  | 'defaultPickerValue'
+  | 'mode'
+> & {
   format?: string
   value?: string | Moment | null | undefined
   defaultValue?: string | Moment | null | undefined
