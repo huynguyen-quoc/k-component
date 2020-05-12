@@ -1,17 +1,18 @@
-import MocaForm, { FormProps, FormInstance, useForm } from './form'
-import MocaFormItem, { FormItemProps } from './item'
+import Form, { useForm } from './form'
+import FormItem from './item'
 
-type MocaForm = typeof MocaForm
+type MocaForm = typeof Form
 
-interface Form extends MocaForm {
-  Item: typeof MocaFormItem
+interface FormType extends MocaForm {
+  Item: typeof FormItem
   useForm: typeof useForm
 }
 
-const Form: Form = MocaForm as Form
-Form.Item = MocaFormItem
-Form.useForm = useForm
+const MocaForm: FormType = Form as FormType
+MocaForm.Item = FormItem
+MocaForm.useForm = useForm
 
-export { FormInstance, FormProps, FormItemProps }
+export { MocaFormInstance, MocaFormProps } from './form'
+export { MocaFormItemProps } from './item'
 
-export default Form
+export default MocaForm

@@ -4,7 +4,7 @@ import Option from './option'
 
 export default {
   component: MocaSelect,
-  title: 'MocaSelect',
+  title: 'Components/MocaSelect',
   subcomponents: { 'MocaSelect.Option': Option },
 }
 

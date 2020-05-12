@@ -4,7 +4,7 @@ import MocaButton from './button'
 
 export default {
   component: MocaButton,
-  title: 'MocaButton',
+  title: 'Components/MocaButton',
 }
 
 export const basic = (): JSX.Element => <MocaButton onClick={action('clicked')}>Basic</MocaButton>

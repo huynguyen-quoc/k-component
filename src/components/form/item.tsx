@@ -17,11 +17,11 @@ const itemHorizontalLayout = {
   },
 }
 
-export interface FormItemProps extends AntFormItemProps {
+export interface MocaFormItemProps extends Omit<AntFormItemProps, 'labelCol' | 'wrapperCol'> {
   direction?: 'vertical' | 'horizontal'
 }
 
-export const MocaFormItem: FC<FormItemProps> = ({ direction = 'vertical', ...rest }: FormItemProps) => {
+export const MocaFormItem: FC<MocaFormItemProps> = ({ direction = 'vertical', ...rest }: MocaFormItemProps) => {
   const { labelCol, wrapperCol } = itemHorizontalLayout
 
   return (

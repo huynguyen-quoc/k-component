@@ -3,7 +3,7 @@ import MocaInputNumber from './input-number'
 
 export default {
   component: MocaInputNumber,
-  title: 'MocaInputNumber',
+  title: 'Components/MocaInputNumber',
 }
 
 export const basic = (): JSX.Element => <MocaInputNumber placeholder="Number Basic" />

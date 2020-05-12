@@ -10,6 +10,6 @@ export const MocaForm = forwardRef<Ref, FormProps>((props, ref) => <AntForm ref=
 
 MocaForm.displayName = 'MocaForm'
 
-export { FormProps, FormInstance, useForm }
+export { FormProps as MocaFormProps, FormInstance as MocaFormInstance, useForm }
 
 export default MocaForm

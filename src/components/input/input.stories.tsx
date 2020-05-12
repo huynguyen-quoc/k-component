@@ -3,7 +3,7 @@ import MocaInput from './input'
 import TextArea from './textarea'
 
 export default {
-  title: 'MocaInput',
+  title: 'Components/MocaInput',
   component: MocaInput,
   subcomponents: { 'MocaInput.TextArea': TextArea },
 }
