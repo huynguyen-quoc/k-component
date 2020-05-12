@@ -60,7 +60,7 @@ module.exports = ({ config }) => {
           propFilter: (prop) => {
             const parentName = (prop.parent && prop.parent.name) || ''
             if (
-              (prop.name === 'key' && parentName === 'RefAttributes') ||
+              (prop.name === 'key' || parentName === 'RefAttributes') ||
               parentName.endsWith('HTMLAttributes') ||
               parentName === 'DOMAttributes' ||
               parentName === 'AriaAttributes'
