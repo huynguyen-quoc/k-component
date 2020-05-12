@@ -4,8 +4,8 @@ import MocaCheckbox from './components/checkbox'
 import MocaDatePicker from './components/date-picker'
 import MocaSelect from './components/select'
 import MocaRadio from './components/radio'
-import Form from './components/form'
-import Modal from './components/modal'
-import Table from './components/table'
-
-export { MocaButton, MocaInput, MocaCheckbox, MocaDatePicker, MocaSelect, Form, MocaRadio, Modal, Table }
+import MocaForm from './components/form'
+import MocaModal from './components/modal'
+import MocaTable from './components/table'
+export * as MocaClient from './utils/client'
+export { MocaButton, MocaInput, MocaCheckbox, MocaDatePicker, MocaSelect, MocaForm, MocaRadio, MocaModal, MocaTable }
