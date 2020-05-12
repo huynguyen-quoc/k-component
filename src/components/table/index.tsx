@@ -1,32 +1,13 @@
-import React, { PropsWithChildren } from 'react'
-import { Table as AntTable } from 'antd'
-import { TableProps, ColumnProps } from 'antd/es/table'
-import './table.scss'
+import Table from './table'
+import Column from './column'
 
-export type MocaTableProps<T> = PropsWithChildren<TableProps<T>>
-
-export type MocaColumnProps<T> = ColumnProps<T>
-
-const rowClass = <T extends object = {}>(_: T, index: number): string => {
-  const modClass = index % 2 === 0 ? 'even' : 'odd'
-  return modClass
+type MocaTable = typeof Table
+interface TableType extends MocaTable {
+  Column: typeof Column
 }
 
-const MocaTable = <T extends object = {}>(props: MocaTableProps<T>): JSX.Element => {
-  return <AntTable<T> {...props} rowClassName={rowClass} />
-}
+const MocaTable: TableType = Table as TableType
 
-MocaTable.displayName = 'MocaTable'
-type MocaTable = typeof MocaTable
+MocaTable.Column = Column
 
-interface Table extends MocaTable {
-  Column: typeof AntTable.Column
-}
-
-const Table: Table = MocaTable as Table
-
-export const Column = AntTable.Column
-
-Table.Column = AntTable.Column
-
-export default Table
+export default MocaTable
