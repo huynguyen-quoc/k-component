@@ -10,7 +10,7 @@ const rowClass = <T extends object = {}>(_: T, index: number): string => {
   return modClass
 }
 
-const MocaTable = <T extends object = {}>(props: MocaTableProps<T>): JSX.Element => {
+export const MocaTable = <T extends object = {}>(props: MocaTableProps<T>): JSX.Element => {
   return <AntTable<T> {...props} rowClassName={rowClass} />
 }
 
