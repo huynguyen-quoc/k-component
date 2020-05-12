@@ -5,6 +5,7 @@ import Column from './column'
 export default {
   component: MocaTable,
   title: 'Components/MocaTable',
+  subcomponents: { 'MocaTable.Column': Column },
 }
 
 interface ModalState {
