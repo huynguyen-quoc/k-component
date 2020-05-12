@@ -5,7 +5,7 @@ import Group from './group'
 export default {
   component: MocaCheckbox,
   title: 'MocaCheckbox',
-  subcomponents: { MocaCheckboxGroup: Group },
+  subcomponents: { 'MocaCheckbox.Group': Group },
 }
 const options = [
   { label: 'check box 1', value: 1 },

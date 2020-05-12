@@ -5,7 +5,7 @@ import TextArea from './textarea'
 export default {
   title: 'MocaInput',
   component: MocaInput,
-  subcomponents: { MocaTextArea: TextArea },
+  subcomponents: { 'MocaInput.TextArea': TextArea },
 }
 
 export const basic = (): JSX.Element => <MocaInput placeholder="Basic" />
