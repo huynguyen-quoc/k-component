@@ -79,6 +79,12 @@
       "build",
       "node_modules"
     ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "lines": 100
+      }
+    },
     "collectCoverageFrom": [
       "src/**/{!(index),}.{ts,tsx}",
       "!src/**/*.stories.{ts,tsx}"
