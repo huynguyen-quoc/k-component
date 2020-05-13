@@ -27,7 +27,7 @@ export type MocaDatePickerProps = Omit<
 
 const setValue = (value?: string | undefined | null | Moment): Moment | undefined => {
   if (!value) return undefined
-  const dateMoment = moment(value)
+  const dateMoment = moment(value, undefined, true)
   return (dateMoment.isValid() && dateMoment) || undefined
 }
 
