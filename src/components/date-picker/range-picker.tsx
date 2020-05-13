@@ -14,10 +14,15 @@ export type MocaDateRangePickerProps = Omit<
   MocaDatePickerProps,
   'onChange' | 'placeholder' | 'value' | 'defaultValue'
 > & {
-  value?: string[] | Moment[] | null | undefined
-  defaultValue?: string[] | Moment[] | null | undefined
+  value?: string[] | Moment[] | undefined
+  defaultValue?: string[] | Moment[] | undefined
   placeholder?: MocaDateRangePlaceHolderType
-  onChange?: (value: Moment[] | null, dateStrings: string[]) => void
+  onChange?: (value: (Moment | null)[] | undefined | null, dateStrings: (string | null)[]) => void
+}
+
+interface ValueChangeType {
+  type: string
+  changedValue: Moment | null | undefined
 }
 
 export const MocaDatePicker = forwardRef<any, MocaDateRangePickerProps>(
@@ -39,29 +44,32 @@ export const MocaDatePicker = forwardRef<any, MocaDateRangePickerProps>(
     const [startValue, setStartValue] = useState(value ? value[0] : null)
     const [endValue, setEndValue] = useState(value ? value[1] : null)
 
-    const onValueChange = ({ type, changedValue }: any): void => {
-      let startUpdatedValue: Moment = moment(startValue)
-      let endUpdatedValue: Moment = moment(endValue)
+    const onValueChange = ({ type, changedValue }: ValueChangeType): void => {
+      let _startValue: Moment | null = moment(startValue)
+      let _endValue: Moment | null = moment(endValue)
       switch (type) {
         case 'start':
-          startUpdatedValue = changedValue || null
+          _startValue = changedValue || null
           break
         case 'end':
-          endUpdatedValue = changedValue || null
+          _endValue = changedValue || null
           break
         default:
           break
       }
-      const isValidUpdatedValue = startUpdatedValue && endUpdatedValue && startUpdatedValue < endUpdatedValue
-      if (!isValidUpdatedValue) {
-        if (type === 'start' && endUpdatedValue) endUpdatedValue = startUpdatedValue
-        if (type === 'end' && startUpdatedValue) startUpdatedValue = endUpdatedValue
+      const validEndDate = _endValue && _endValue.isValid()
+      const validStartDate = _startValue && _startValue.isValid()
+      const startBeforeEnd = _startValue! < _endValue!
+
+      if (validStartDate && validEndDate && !startBeforeEnd) {
+        if (type === 'start') _endValue = _startValue
+        if (type === 'end') _startValue = _endValue
       }
 
-      setStartValue(startUpdatedValue)
-      setEndValue(endUpdatedValue)
-      if (onChange) {
-        onChange([startUpdatedValue, endUpdatedValue], [startUpdatedValue.format(), endUpdatedValue.format()])
+      setStartValue(_startValue)
+      setEndValue(_endValue)
+      if (onChange && validStartDate && validEndDate) {
+        onChange([_startValue, _endValue], [_startValue?.format() ?? null, _endValue?.format() ?? null])
       }
     }
     return (
@@ -89,6 +97,7 @@ export const MocaDatePicker = forwardRef<any, MocaDateRangePickerProps>(
               onValueChange({ type: 'end', changedValue })
             }}
             defaultValue={defaultValue && defaultValue[1]}
+            value={endValue}
           />
         </Col>
       </Row>
