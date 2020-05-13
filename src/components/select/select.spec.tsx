@@ -1,24 +1,29 @@
 import * as React from 'react'
 import { render, RenderResult } from '@testing-library/react'
 import Select, { MocaSelectProps } from './select'
+import Option from './option'
 import '@testing-library/jest-dom/extend-expect'
 
 describe('Select', () => {
-  let props: MocaSelectProps<number>
+  let props: MocaSelectProps<string>
 
-  const options = [{ value: 1, title: 'test' }]
   beforeEach(() => {
     props = {
-      value: 1,
-      options: options,
+      defaultValue: 'Testing1',
     }
   })
 
-  const renderComponent = (): RenderResult => render(<Select {...props} />)
+  const renderComponent = (): RenderResult =>
+    render(
+      <Select {...props}>
+        <Option value="Testing">Test</Option>
+        <Option value="Testing1">Test 2</Option>
+      </Select>,
+    )
   it('should render correctly', async () => {
-    const { getByText } = renderComponent()
+    const { container } = renderComponent()
 
-    const item: HTMLElement = getByText('1') as HTMLElement
-    expect(item).toBeInTheDocument()
+    const selectedItem: HTMLDivElement = container.querySelector('.ant-select-selection-item') as HTMLDivElement
+    expect(selectedItem.textContent).toBe('Test 2')
   })
 })
