@@ -12,12 +12,10 @@ jobs:
             - run: yarn install
             - run: yarn test
   publish:
-    steps:
-      - attach_workspace:
-          at: ~/repo
+    steps: 
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/.npmrc
       - run:
           name: Publish package
           command: npm publish
