@@ -3,7 +3,7 @@ import { render, RenderResult } from '@testing-library/react'
 import Modal, { MocaModalProps } from './modal'
 import '@testing-library/jest-dom/extend-expect'
 
-describe('Select', () => {
+describe('Modal', () => {
   let props: MocaModalProps
 
   beforeEach(() => {
