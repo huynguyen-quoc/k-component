@@ -1,6 +1,6 @@
 {
-  "name": "ant-huy-component",
-  "version": "1.0.4",
+  "name": "k-component",
+  "version": "1.0.0",
   "description": "K custom ant component",
   "main": "build/index.js",
   "module": "build/index.es.js",
