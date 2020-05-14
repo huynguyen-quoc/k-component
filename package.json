@@ -9,7 +9,7 @@
   "scripts": {
     "build": "rollup -c",
     "storybook": "start-storybook --docs -p 6006",
-    "test": "jest --coverage",
+    "test": "jest -w 1 --coverage",
     "lint": "eslint '*/**/*.{js,ts,tsx,jsx}' --quiet --fix"
   },
   "author": "Huy Nguyen",
