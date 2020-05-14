@@ -13,8 +13,8 @@ jobs:
 
       - restore_cache:
           keys:
-          - v1.0-dependencies-{{ checksum "package.json" }}
-          - v1.0-dependencies-
+            - v1.0-dependencies-{{ checksum "package.json" }}
+            - v1.0-dependencies-
       - run: yarn install
       - run:
           name: Run tests
@@ -28,17 +28,20 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths: .
-  deploy:
+  build-deploy:
     <<: *defaults
     steps:
       - attach_workspace:
           at: ~/repo
       - run:
+          name: Build
+          command: yarn build
+      - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
       - run:
           name: Publish package
-          command: yarn publish
+          command: npm publish --access public
 
 workflows:
   version: 2
@@ -48,7 +51,7 @@ workflows:
           filters:
             tags:
               only: /^.*/
-      - deploy:
+      - build-deploy:
           requires:
             - test
           filters:

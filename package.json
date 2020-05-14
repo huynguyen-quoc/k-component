@@ -1,11 +1,14 @@
 {
-  "name": "@reviewnha/base",
+  "name": "@reviewnha/core",
   "version": "1.0.0",
   "description": "Moca base library",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "jsnext:main": "build/index.es.js",
   "types": "build/index.d.ts",
+  "files": [
+    "/build"
+  ],
   "scripts": {
     "build": "rollup -c",
     "storybook": "start-storybook --docs -p 6006",
