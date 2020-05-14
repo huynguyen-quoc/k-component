@@ -1,7 +1,7 @@
 {
-  "name": "ant-huy-component",
-  "version": "1.0.4",
-  "description": "K custom ant component",
+  "name": "@reviewnha/base",
+  "version": "1.0.0",
+  "description": "Moca base library",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "jsnext:main": "build/index.es.js",
