@@ -7,5 +7,5 @@ import MocaRadio from './components/radio'
 import MocaForm from './components/form'
 import MocaModal from './components/modal'
 import MocaTable from './components/table'
-export * as MocaClient from './utils/client'
+export * as MocaHttp from './requests/http'
 export { MocaButton, MocaInput, MocaCheckbox, MocaDatePicker, MocaSelect, MocaForm, MocaRadio, MocaModal, MocaTable }
