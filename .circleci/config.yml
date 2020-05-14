@@ -3,7 +3,6 @@ orbs:
   node: circleci/node@1.1.6
 jobs:
   build-and-test:
-    <<: *defaults  
     executor:
       name: node/default
     steps:
@@ -13,7 +12,6 @@ jobs:
             - run: yarn install
             - run: yarn test
   deploy:
-    <<: *defaults
     steps:
       - attach_workspace:
           at: ~/repo
