@@ -30,7 +30,7 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths: .
-  build-deploy:
+  deploy:
     <<: *defaults
     steps:
       - attach_workspace:
@@ -48,11 +48,11 @@ workflows:
   test-deploy:
     jobs:
       - build-test:
-      - build-deploy:
+      - deploy:
           requires:
-            - test
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
+            - build-test
+          # filters:
+          #   tags:
+          #     only: /^v.*/
+          #   branches:
+          #     ignore: /.*/
