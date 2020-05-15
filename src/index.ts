@@ -9,6 +9,7 @@ import MocaModal from './components/modal'
 import MocaTable from './components/table'
 import MocaDivider from './components/divider'
 import MocaSpace from './components/space'
+import MocaCard from './components/card'
 export * as MocaHttp from './requests/http'
 export {
   MocaButton,
@@ -21,5 +22,6 @@ export {
   MocaForm,
   MocaRadio,
   MocaModal,
+  MocaCard,
   MocaTable,
 }
