@@ -87,7 +87,6 @@ export default {
     resolve(),
     typescript({
       clean: true,
-      useTsconfigDeclarationDir: true,
       transformers: [
         () => ({
           before: transformer,
