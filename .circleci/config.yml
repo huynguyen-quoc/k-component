@@ -47,12 +47,5 @@ workflows:
   version: 2
   test-deploy:
     jobs:
-      - build-test:
-      - deploy:
-          requires:
-            - build-test
-          # filters:
-          #   tags:
-          #     only: /^v.*/
-          #   branches:
-          #     ignore: /.*/
+      - build-test
+      - deploy
