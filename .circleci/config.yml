@@ -6,7 +6,7 @@ defaults: &defaults
     - image: circleci/node:12.16.3
 
 jobs:
-  test:
+  build-test:
     <<: *defaults
     steps:
       - checkout
@@ -19,12 +19,14 @@ jobs:
       - run:
           name: Run tests
           command: yarn test
-
+      - run:
+          name: Build
+          command: yarn build
       - save_cache:
           paths:
             - node_modules
           key: v1.0-dependencies-{{ checksum "package.json" }}
-
+        
       - persist_to_workspace:
           root: ~/repo
           paths: .
@@ -33,9 +35,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/repo
-      - run:
-          name: Build
-          command: yarn build
+      
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
@@ -47,10 +47,7 @@ workflows:
   version: 2
   test-deploy:
     jobs:
-      - test:
-          filters:
-            tags:
-              only: /^.*/
+      - build-test:
       - build-deploy:
           requires:
             - test
