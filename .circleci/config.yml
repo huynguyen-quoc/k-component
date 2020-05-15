@@ -29,7 +29,6 @@ jobs:
           paths:
             - node_modules
           key: v1.0-dependencies-{{ checksum "package.json" }}
-        
       - persist_to_workspace:
           root: ~/repo
           paths: .
@@ -38,7 +37,9 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/repo
-      
+      - run:
+          name: List files dist folder
+          command: ls dist
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
