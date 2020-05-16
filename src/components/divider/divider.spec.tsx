@@ -3,7 +3,7 @@ import { render, RenderResult } from '@testing-library/react'
 import MocaDivider, { MocaDividerProps } from './divider'
 import '@testing-library/jest-dom/extend-expect'
 
-describe('Input', () => {
+describe('Divider', () => {
   let props: MocaDividerProps
 
   beforeEach(() => {

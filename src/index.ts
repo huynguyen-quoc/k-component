@@ -13,9 +13,11 @@ import MocaSpace from './components/space'
 import MocaCard from './components/card'
 import MocaSwitch from './components/switch'
 import MocaAccessControl from './components/access-control'
+import MocaTypography from './components/typography'
 export * as MocaHttp from './requests/http'
 export {
   MocaButton,
+  MocaTypography,
   MocaInput,
   MocaSwitch,
   MocaInputNumber,
