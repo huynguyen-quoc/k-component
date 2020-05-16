@@ -1,5 +1,6 @@
 import MocaButton from './components/button'
 import MocaInput from './components/input'
+import MocaInputNumber from './components/input-number'
 import MocaCheckbox from './components/checkbox'
 import MocaDatePicker from './components/date-picker'
 import MocaSelect from './components/select'
@@ -10,11 +11,14 @@ import MocaTable from './components/table'
 import MocaDivider from './components/divider'
 import MocaSpace from './components/space'
 import MocaCard from './components/card'
+import MocaSwitch from './components/switch'
 import MocaAccessControl from './components/access-control'
 export * as MocaHttp from './requests/http'
 export {
   MocaButton,
   MocaInput,
+  MocaSwitch,
+  MocaInputNumber,
   MocaAccessControl,
   MocaCheckbox,
   MocaDivider,
