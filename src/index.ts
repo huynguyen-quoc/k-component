@@ -14,6 +14,7 @@ import MocaCard from './components/card'
 import MocaSwitch from './components/switch'
 import MocaAccessControl from './components/access-control'
 import MocaTypography from './components/typography'
+import MocaLoading from './components/loading'
 export * as MocaHttp from './requests/http'
 export {
   MocaButton,
@@ -24,6 +25,7 @@ export {
   MocaAccessControl,
   MocaCheckbox,
   MocaDivider,
+  MocaLoading,
   MocaSpace,
   MocaDatePicker,
   MocaSelect,
