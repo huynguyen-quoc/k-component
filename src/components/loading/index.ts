@@ -1,4 +1,4 @@
-import withLoading from './withLoading'
+import withLoading from './with-loading'
 
-export { WithLoadingProps } from './withLoading'
+export { WithLoadingProps } from './with-loading'
 export default { withLoading }
