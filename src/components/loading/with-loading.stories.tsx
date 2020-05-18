@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import withLoading from './withLoading'
+import withLoading from './with-loading'
 
 export default {
   title: 'Components/WithContentLoading',
@@ -22,5 +22,9 @@ export const loadingShow = (): JSX.Element => {
 }
 export const contentShow = (): JSX.Element => {
   const Component = withLoading({ loading: false })<{}>(BaseComponent)
+  return <Component />
+}
+export const errorShow = (): JSX.Element => {
+  const Component = withLoading({ loading: false, error: { message: 'Error Message' } })<{}>(BaseComponent)
   return <Component />
 }

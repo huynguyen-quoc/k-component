@@ -1,10 +1,14 @@
-import React, { PureComponent } from 'react'
-import { Row, Col, Skeleton } from 'antd'
-
+import React, { PureComponent, ReactNode } from 'react'
+import { Row, Col, Skeleton, Empty } from 'antd'
+export type WithLoadingErrorType = {
+  message: string
+  image?: ReactNode
+}
 export interface WithLoadingProps {
   loading: boolean
+  error?: WithLoadingErrorType
 }
-export const withLoading = ({ loading }: WithLoadingProps) => <P extends object = {}>(
+export const withLoading = ({ loading, error }: WithLoadingProps) => <P extends object = {}>(
   Component: React.ComponentType<P>,
 ): React.ComponentClass<P> => {
   return class extends PureComponent<P> {
@@ -19,7 +23,8 @@ export const withLoading = ({ loading }: WithLoadingProps) => <P extends object 
               </Col>
             </Row>
           )}
-          {!loading && <Component {...this.props} />}
+          {!loading && !error && <Component {...this.props} />}
+          {!loading && error && <Empty description={error.message} image={error.image} />}
         </>
       )
     }

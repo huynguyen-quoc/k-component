@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { render, RenderResult } from '@testing-library/react'
-import withLoading, { WithLoadingProps } from './withLoading'
+import withLoading, { WithLoadingProps } from './with-loading'
 import '@testing-library/jest-dom/extend-expect'
 
 describe('WithLoading', () => {
@@ -32,6 +32,22 @@ describe('WithLoading', () => {
 
     const inputItem = getByPlaceholderText('test')
     expect(inputItem).toBeTruthy()
+    const item: HTMLDivElement = container.querySelector('.ant-skeleton') as HTMLDivElement
+    expect(item).not.toBeInTheDocument()
+  })
+
+  it('should render correctly with loading false and contain error', async () => {
+    props.loading = false
+    props.error = { message: 'Error message' }
+    const TestComponent: FC<any> = () => <input type="text" placeholder="test" />
+    const Component = withLoading(props)<{}>(TestComponent)
+    const renderComponent = (): RenderResult => render(<Component />)
+    const { getByText, container, queryByPlaceholderText } = renderComponent()
+
+    const errorMessageItem = getByText('Error message')
+    expect(errorMessageItem).toBeTruthy()
+    const inputItems = queryByPlaceholderText('test')
+    expect(inputItems).toBeFalsy()
     const item: HTMLDivElement = container.querySelector('.ant-skeleton') as HTMLDivElement
     expect(item).not.toBeInTheDocument()
   })
