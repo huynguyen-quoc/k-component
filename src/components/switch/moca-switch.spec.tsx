@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { render, RenderResult } from '@testing-library/react'
-import Switch, { MocaSwitchProps } from './switch'
+import Switch, { MocaSwitchProps } from './moca-switch'
 import '@testing-library/jest-dom/extend-expect'
 
 describe('Input', () => {

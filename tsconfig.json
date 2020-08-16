@@ -1,5 +1,5 @@
 {
-  "compilerOptions": {
+   "compilerOptions": {
     "outDir": "dist",
     "module": "esnext",
     "target": "es5",
@@ -14,16 +14,11 @@
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "esModuleInterop": true,
-    "baseUrl": ".",
-    "paths": {
-      "components/*": ["src/components/*"],
-      "requests/*": ["src/requests/*"]
-    }
+    "baseUrl": "./src"
   },
-  "include": ["src"],
+  
   "exclude": ["node_modules", "build", "**/*.spec.tsx", "**/*.stories.tsx"]
 }

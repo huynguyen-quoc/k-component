@@ -1,5 +1,5 @@
 import React from 'react'
-import MocaSwitch from './switch'
+import MocaSwitch from './moca-switch'
 
 export default {
   component: MocaSwitch,

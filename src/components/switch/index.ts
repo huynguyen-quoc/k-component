@@ -1,3 +1,3 @@
-import Switch from './switch'
+import Switch from './moca-switch'
 
 export default Switch

@@ -42,7 +42,7 @@ export const MocaDatePicker = forwardRef<any, MocaDatePickerProps>(
     }: MocaDatePickerProps,
     ref,
   ) => {
-    const dateFormat = formatType[format]
+    const dateFormat = formatType[format as MocaFormatTypeName]
     return (
       <AntDatePicker
         picker="date"

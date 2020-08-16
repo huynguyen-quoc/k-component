@@ -5,9 +5,11 @@ import { CheckboxProps, CheckboxChangeEvent } from 'antd/es/checkbox'
 
 export type MocaCheckboxRef = AntCheckbox
 
-export const MocaCheckbox = forwardRef<any, CheckboxProps>((props, ref) => <AntCheckbox {...props} ref={ref} />)
+export type MocaCheckboxProps = Omit<CheckboxProps, ''>
+
+export const MocaCheckbox = forwardRef<any, MocaCheckboxProps>((props, ref) => <AntCheckbox {...props} ref={ref} />)
 
 MocaCheckbox.displayName = 'MocaCheckbox'
 
-export { CheckboxProps as MocaCheckboxProps, CheckboxChangeEvent as MocaCheckboxChangeEvent }
+export { CheckboxChangeEvent as MocaCheckboxChangeEvent }
 export default MocaCheckbox
