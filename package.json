@@ -15,7 +15,7 @@
     "storybook": "start-storybook --docs -p 6006",
     "test": "jest -w 1 --coverage",
     "lint": "eslint '*/**/*.{js,ts,tsx,jsx}' --quiet --fix",
-    "postversion": "git push --tags && yarn publish . --tag $npm_package_version && git push && echo \"Successfully released version $npm_package_version!\""
+    "postversion": "git push --tags && echo \"Successfully released version $npm_package_version!\""
   },
   "author": "Huy Nguyen",
   "license": "ISC",
