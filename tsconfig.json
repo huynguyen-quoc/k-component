@@ -17,8 +17,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "esModuleInterop": true,
-    "baseUrl": "./src"
+    "baseUrl": "."
   },
-  
+  "include": ["src"],
   "exclude": ["node_modules", "build", "**/*.spec.tsx", "**/*.stories.tsx"]
 }
