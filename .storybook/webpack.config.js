@@ -40,7 +40,7 @@ module.exports = ({ config }) => {
     ],
   })
   config.module.rules.push({
-    test: /\.(ts|tsx)$/,
+    test: /\.tsx?$/,
     include: [SRC_PATH],
     use: [
       'babel-loader',
@@ -53,25 +53,25 @@ module.exports = ({ config }) => {
           }),
         },
       },
-      {
-        loader: require.resolve('react-docgen-typescript-loader'),
-        options: {
-          tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
-          propFilter: (prop) => {
-            const parentName = (prop.parent && prop.parent.name) || ''
-            if (
-              (prop.name === 'key' || parentName === 'RefAttributes') ||
-              parentName.endsWith('HTMLAttributes') ||
-              parentName === 'DOMAttributes' ||
-              parentName === 'AriaAttributes'
-            ) {
-              return false
-            }
+      // {
+      //   loader: require.resolve('react-docgen-typescript-loader'),
+      //   options: {
+      //     tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
+      //     propFilter: (prop) => {
+      //       const parentName = (prop.parent && prop.parent.name) || ''
+      //       if (
+      //         (prop.name === 'key' || parentName === 'RefAttributes') ||
+      //         parentName.endsWith('HTMLAttributes') ||
+      //         parentName === 'DOMAttributes' ||
+      //         parentName === 'AriaAttributes'
+      //       ) {
+      //         return false
+      //       }
 
-            return true
-          },
-        },
-      },
+      //       return true
+      //     },
+      //   },
+      // },
     ],
     exclude: /node_modules/,
   })

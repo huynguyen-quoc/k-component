@@ -2,7 +2,7 @@ import Checkbox from './checkbox'
 import Group from './group'
 
 export { MocaCheckboxProps, MocaCheckboxChangeEvent } from './checkbox'
-export { MocaCheckboxGroupProps, MocaCheckboxOptionType } from './group'
+export { MocaCheckboxGroupProps } from './group'
 
 type MocaCheckbox = typeof Checkbox
 interface CheckboxType extends MocaCheckbox {
