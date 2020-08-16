@@ -1,10 +1,10 @@
-import React, { forwardRef } from 'react'
+import React, { FC } from 'react'
 import { Card as AntCard } from 'antd'
 import { CardProps } from 'antd/es/card'
 
 export type MocaCardProps = CardProps
 
-export const MocaCard = forwardRef<any, MocaCardProps>((props, ref) => <AntCard {...props} ref={ref} />)
+export const MocaCard: FC<CardProps> = (props: CardProps) => <AntCard {...props} />
 
 MocaCard.displayName = 'MocaCard'
 

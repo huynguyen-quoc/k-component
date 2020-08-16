@@ -21,7 +21,7 @@
     "baseUrl": ".",
     "paths": {
       "components/*": ["src/components/*"],
-"requests/*": ["src/requests/*"]
+      "requests/*": ["src/requests/*"]
     }
   },
   "include": ["src"],
